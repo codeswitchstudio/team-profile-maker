@@ -20,6 +20,36 @@ const teamMembers = [];
 // Employee ID
 // Email address
 // Office number
+function promptManager() {
+    inquirer
+      .prompt([
+    {
+        type: 'input',
+        name: 'title',
+        message: 'What is the title of your project?',
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'What is your project about?',
+    },
+    {
+        type: 'input',
+        name: 'userStory',
+        message: 'Please input your user story:',
+    }
+
+])};
+
+
+
+
+
+
+
+
+
+
 
 
 

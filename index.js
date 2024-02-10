@@ -8,6 +8,11 @@ const fs = require("fs");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
+// const outputDir = "./output";
+// const outputFilePath = path.join(outputDir, "team.html");
+
+
+
 const render = require("./src/page-template.js");
 
 
@@ -105,7 +110,7 @@ function promptManager() {
 
 // When a user selects the engineer option then a user is prompted to enter the following and then the user is taken back to the menu:
 // Engineer's Name, ID, Email, GitHub username
-function  addEngineer() {
+function  promptEngineer() {
     inquirer.prompt([   
         {   type: 'input',
             name: 'name',                                       
@@ -159,22 +164,31 @@ function  addEngineer() {
                 } 
         }         
         ])
+
         .then((answers) => {
             // Add input to array
-            const engineeer = new Engineer(
+            const engineer = new Engineer(
                 answers.name, 
                 answers.id, 
                 answers.email, 
                 answers.github
-        )
-    });
-    teamMembers.push(engineeer);  
-    console.log(teamMembers);     
-}
+            )
+                teamMembers.push(engineer);  
+                console.log(`Adding the manager to the team...`);
+                // Call function to add more members or build the team
+                // When a user enters those requirements then the user is presented with a menu with the option to:
+                // Add an engineer
+                // Add an intern
+                // Finish building the team
+            
+                addTeamMember();  
+            });    
+};
+
 
 // When a user selects the intern option then a user is prompted to enter the following and then the user is taken back to the menu:
 // Intern’s name, ID, Email, School
-function addIntern() {
+function promptIntern() {
     inquirer.prompt([   
         {   type: 'input',
             name: 'name',                                       
@@ -230,15 +244,22 @@ function addIntern() {
         ])
         .then((answers) => {
             // Add input to array
-            const engineeer = new Engineer(
+            const intern = new Intern(
                 answers.name, 
                 answers.id, 
                 answers.email, 
                 answers.school
-        )
+            )
+            teamMembers.push(intern);  
+            console.log(`Adding the intern to the team...`);
+            // Call function to add more members or build the team
+            // When a user enters those requirements then the user is presented with a menu with the option to:
+            // Add an engineer
+            // Add an intern
+            // Finish building the team
+        
+            addTeamMember(); 
     });
-    teamMembers.push(intern);  
-    console.log(teamMembers);     
 }
 
 //function to add team members
@@ -249,7 +270,7 @@ function addTeamMember() {
       {
         type: "list",
         name: "menu",
-        message: "Which team member woyld yoiu like to add?",
+        message: "Which team member would yoiu like to add?",
         choices: ["Add an engineer", "Add an intern", "Finish building the team"],
       },
     ])
@@ -275,41 +296,38 @@ function addTeamMember() {
 // Call the render function (provided for you) and pass in an array containing all employee objects;
 // The render function will generate and return a block of HTML including templated divs for each employee!
 
-generateTeam(manager, engineer, intern);
+// generateTeam(manager, engineer, intern);
 
-const html = render(teamMembers);
+// const html = render(teamMembers);
 
-fs.writeFile('./dist/index.html', html, (err) =>
-  err ? console.error(err) : console.log('Success!')
-);
+// fs.writeFile('./output/team.html', html, (err) =>
+//   err ? console.error(err) : console.log('Success!')
+// );
 
 // Create an HTML file using the HTML returned from the render function.
 // Write it to a file named team.html in the output folder.
 // You can use the provided variable outputPath to target this location.
 // Hint: You will need to read file out of the output folder (and add the dist folder to that path).
 
-fs.writeFile("./output/team.html", html, function(err) {
-    if (err) {
-      return console.log(err);
-    } else {
-      console.log("Your HTML has been successfully created!");
+// fs.writeFile("./output/team.html", html, function(err) {
+//     if (err) {
+//       return console.log(err);
+//     } else {
+//       console.log("Your HTML has been successfully created!");
+//     }
+// });
+
+function generateHTML() {
+    const html = render(teamMembers);
+    // Check if the output directory exists, create it if not
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR);
     }
-});
+    // Write the HTML to the specified output file
+    fs.writeFileSync(outputPath, html);
+    console.log(`Team HTML generated at ${outputPath}`);
+  }
+
+
 
 promptManager();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//and render the HTML file
-

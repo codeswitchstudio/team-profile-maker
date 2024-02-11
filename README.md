@@ -54,7 +54,7 @@ node index.js
 
 To install the necessary dependencies for this application, run `npm i` in your terminal from the root directory of the project folder. This will install all required packages listed in the package.json file.
 
-This application uses [Inquirer](https://www.npmjs.com/package/inquirer)for collecting input from the user and [Jest](https://jestjs.io/) for running the unit tests. 
+This application uses [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user and [Jest](https://jestjs.io/) for running the unit tests. 
 
 Please check the [Inquirer documentation](https://www.npmjs.com/package/inquirer#installation) and [JEST Getting Started page](https://jestjs.io/docs/getting-started) for specific installation details. 
   

@@ -270,7 +270,7 @@ function addTeamMember() {
       {
         type: "list",
         name: "menu",
-        message: "Which team member would yoiu like to add?",
+        message: "Which team member would you like to add?",
         choices: ["Add an engineer", "Add an intern", "Finish building the team"],
       },
     ])

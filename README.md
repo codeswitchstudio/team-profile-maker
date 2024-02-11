@@ -140,6 +140,7 @@ npm test
  - [Bootstrap](https://getbootstrap.com/)
  - [Font Awesome Icons](https://fontawesome.com/icons)
  - [Magic Pattern Design Tools](https://www.magicpattern.design/tools)
+ - [VSCode Blackbox Extension](https://www.useblackbox.io/vscode)
 
 ## Questions
   For any further questions please contact:

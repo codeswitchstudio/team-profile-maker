@@ -12,10 +12,14 @@ font-family: 'Alegreya', serif;
     font-family: 'Alegreya', serif;
 }
 
-
-
 h2 {
     color:rgb(255, 24, 20);
+}
+
+
+h2, h3 {
+
+    font-family: 'Alegreya', serif;
 }
 
 

@@ -136,7 +136,7 @@ npm test
  - [Stack Overflow](https://stackoverflow.com/questions/65189877/how-can-i-validate-that-a-user-input-their-email-when-using-inquirer-npm)
  - [ChatGPT](https://chat.openai.com/)
  - [W3 Schools](https://www.w3schools.com/js/js_classes.asp)
- - [Google Fonts Alegreya](https://fonts.google.com/specimen/Alegreya)
+ - [Alegreya Font by Juan Pablo del Peral, Huerta Tipográfica ](https://fonts.google.com/specimen/Alegreya)
  - [Bootstrap](https://getbootstrap.com/)
  - [Font Awesome Icons](https://fontawesome.com/icons)
  - [Magic Pattern Design Tools](https://www.magicpattern.design/tools)

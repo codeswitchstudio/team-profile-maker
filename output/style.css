@@ -1,0 +1,27 @@
+
+body {
+background-color: #ffffff;
+background-image:  linear-gradient(rgb(255, 24, 20) 1px, transparent 1px), linear-gradient(to right,rgb(255, 24, 20) 1px, #ffffff 1px);
+background-size: 20px 20px;
+font-family: 'Alegreya', serif;
+}
+
+
+.jumbotron {
+    color: white;
+    background-color:rgb(255, 24, 20);
+    font-family: 'Alegreya', serif;
+}
+
+
+
+h2 {
+    color:rgb(255, 24, 20);
+}
+
+
+.employee-card {
+    margin: 12px;
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+    
+}
